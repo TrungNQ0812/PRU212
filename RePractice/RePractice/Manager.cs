@@ -107,7 +107,20 @@ namespace RePractice
 
         public void UpdateSalary()
         {
-            
+            foreach (Employee emp in EmployeeList)
+            {
+                if (2025 - emp.doB.Year < 30)
+                {
+                    emp.salary += emp.salary * 0.05;
+                }else if (2025 - emp.doB.Year >= 30 && 2025 - emp.doB.Year < 40)
+                {
+                    emp.salary += emp.salary * 0.1;
+                }
+                else
+                {
+                    emp.salary += emp.salary * 0.15;
+                }
+            }
         }
     }
 }
